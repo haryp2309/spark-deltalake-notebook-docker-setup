@@ -1,0 +1,18 @@
+version: '3'
+
+services:
+  pyspark-jupyter:
+    build: .
+    ports:
+      - "4040:4040"
+      - "7077:7077"
+      - "8080:8080"
+      - "8889:8889"
+    command: /usr/app/start-spark.sh
+    stdin_open: true 
+    tty: true
+    user: root
+    volumes:
+      - ./home:/working_dir
+
+
